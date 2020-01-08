@@ -1,0 +1,95 @@
+﻿<Window x:Class="FlowsheetCreation.ThirdWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FlowsheetCreation"
+        mc:Ignorable="d"
+        Background="WhiteSmoke"
+        Title="Emerson Cable Assistant" Height="420" Width="335" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FFFFFF"/>
+                <GradientStop Color="WhiteSmoke" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <TabControl HorizontalAlignment="Left" Height="320" Margin="22,6,0,0" VerticalAlignment="Top" Width="280">
+            <TabItem Header="Select Location" ToolTip="Define the location &#x0a;of cables o be stored" ToolTipService.ShowDuration="4000" ToolTipService.HasDropShadow="True">
+                <Grid Background="White">
+                    <DataGrid Background="White"  CanUserSortColumns="True" ColumnHeaderHeight="26" CanUserAddRows="False" HorizontalAlignment="Stretch"  Margin="0,10,0.4,0" VerticalAlignment="Top"  ItemsSource="{Binding MyLoc}" AutoGenerateColumns="False"  SelectedItem="{Binding MySelectedLoc, Mode=TwoWay}" Height="272">
+                        <DataGrid.Columns>
+                            <DataGridCheckBoxColumn Header="" Binding="{Binding LocCheckbox, Mode=TwoWay}"  MinWidth="38">
+                                <DataGridCheckBoxColumn.HeaderStyle>
+                                    <Style TargetType="{x:Type DataGridColumnHeader}">
+                                        <Setter Property="Background">
+                                            <Setter.Value>
+                                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                                    <GradientStop Color="#FFFFFF"/>
+                                                    <GradientStop Color="#ccf1ff" Offset="0.94"/>
+                                                </LinearGradientBrush>
+                                            </Setter.Value>
+                                        </Setter>
+                                        <Setter Property="BorderBrush" Value="#FFA3D9F6" />
+                                        <Setter Property="BorderThickness" Value="1" />
+
+                                    </Style>
+                                </DataGridCheckBoxColumn.HeaderStyle>
+                            </DataGridCheckBoxColumn>
+                            <DataGridTextColumn Header=" Part of"  Binding="{Binding LocPartOf, Mode=TwoWay}" Width="*" >
+                                <DataGridTextColumn.HeaderStyle>
+                                    <Style TargetType="{x:Type DataGridColumnHeader}">
+                                        <Setter Property="Background">
+                                            <Setter.Value>
+                                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                                    <GradientStop Color="#FFFFFF"/>
+                                                    <GradientStop Color="#ccf1ff" Offset="0.94"/>
+                                                </LinearGradientBrush>
+                                            </Setter.Value>
+                                        </Setter>
+                                        <Setter Property="BorderBrush" Value="#FFA3D9F6" />
+                                        <Setter Property="BorderThickness" Value="1" />
+
+                                    </Style>
+                                </DataGridTextColumn.HeaderStyle>
+                            </DataGridTextColumn>
+                            <DataGridTextColumn Header=" Comment" Binding="{Binding LocDesignation, Mode=TwoWay}" Width="*" >
+                                <DataGridTextColumn.HeaderStyle>
+                                    <Style TargetType="{x:Type DataGridColumnHeader}">
+                                        <Setter Property="Background">
+                                            <Setter.Value>
+                                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                                    <GradientStop Color="#FFFFFF"/>
+                                                    <GradientStop Color="#ccf1ff" Offset="0.94"/>
+                                                </LinearGradientBrush>
+                                            </Setter.Value>
+                                        </Setter>
+                                        <Setter Property="BorderBrush" Value="#FFA3D9F6" />
+                                        <Setter Property="BorderThickness" Value="1" />
+                                    </Style>
+                                </DataGridTextColumn.HeaderStyle>
+                            </DataGridTextColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+
+            </TabItem>
+        </TabControl>
+        <Button Content="Select" Command="{Binding CmdLocSelect}" BorderThickness="2" BorderBrush="#FFA3D9F6" HorizontalAlignment="Left" Margin="227,342,0,0" VerticalAlignment="Top" Width="75" Height="30">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFFFFF"/>
+                    <GradientStop Color="#FFCCE6F4" Offset="0.84"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button Command="{Binding CmdLocQuit}" BorderThickness="1.25" BorderBrush="DarkGray"  Content="Quit" HorizontalAlignment="Left" Margin="22,342,0,0" VerticalAlignment="Top" Width="75" Height="30">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFFFFF"/>
+                    <GradientStop Color="#FFD4D4D4" Offset="0.84"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+    </Grid>
+</Window>

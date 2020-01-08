@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7E4E8754-A6D4-46D1-9092-8E3AEB616D26}</ProjectGuid>
+    <ProjectTypeGuids>{1F37CB63-53FE-464D-B0DC-9F18C71508FB};{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FlowsheetCreation</RootNamespace>
+    <AssemblyName>FlowsheetCreation</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Aucotec.EngineeringBase.Client.ExRuntime.v1.0, Version=1.0.0.0, Culture=neutral, PublicKeyToken=6d4e536fc230a61a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Aucotec\Engineering Base 681\DotNet\Pipeline\AddInViews\Aucotec.EngineeringBase.Client.ExRuntime.v1.0.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Aucotec.EngineeringBase.Client.Runtime.v1.0, Version=1.0.0.0, Culture=neutral, PublicKeyToken=6d4e536fc230a61a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Aucotec\Engineering Base 681\DotNet\Pipeline\AddInViews\Aucotec.EngineeringBase.Client.Runtime.v1.0.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="netstandard, Version=2.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\download\netstandard\netstandard.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.AddIn" />
+    <Reference Include="System.Collections">
+      <HintPath>..\..\..\..\..\download\System.Collections\System.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Runtime.InteropServices">
+      <HintPath>..\..\..\..\..\download\System.Runtime.InteropServices\System.Runtime.InteropServices.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DialogCloser.cs" />
+    <Compile Include="Model\EnumerableExtensions.cs" />
+    <Compile Include="Helpers\RelayCommand.cs" />
+    <Compile Include="Helpers\VmBase.cs" />
+    <Compile Include="ModelView.cs" />
+    <Compile Include="Model\PlantModel.cs" />
+    <Compile Include="MyPlugIn.cs" />
+    <Compile Include="ObjectItemLocation.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SecondWindow.xaml.cs">
+      <DependentUpon>SecondWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ThirdWindow.xaml.cs">
+      <DependentUpon>ThirdWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VmMainWindow.cs" />
+    <Compile Include="VmSecondWindow.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="MainWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SecondWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ThirdWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="search.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{1F37CB63-53FE-464D-B0DC-9F18C71508FB}">
+        <ClientPlugInProject>
+          <EBDeploymentVersion>6.8.1</EBDeploymentVersion>
+          <PlugInAssemblyIdentifier>e4f9af46-85ce-4483-988f-2e55b5c3110b</PlugInAssemblyIdentifier>
+        </ClientPlugInProject>
+      </FlavorProperties>
+      <FlavorProperties GUID="{1F37CB63-53FE-464D-B0DC-9F18C71508FB}" Configuration="Debug|Any CPU">
+        <ClientProjectCfg />
+      </FlavorProperties>
+      <FlavorProperties GUID="{1F37CB63-53FE-464D-B0DC-9F18C71508FB}" Configuration="Release|Any CPU">
+        <ClientProjectCfg />
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
